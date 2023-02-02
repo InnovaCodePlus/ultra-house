@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*========== VARIABLES CSS ==========*/
+:root{
+    /* colores */
+    --primary-color: rgb(61,67,210);
+    --secondary-color: rgb(249,126,55);
+    --bg-body:rgb(242,247,253);
+    --text-color: rgb(10, 10, 10);
+    --text-color-light: rgb(124, 125, 130);
+
+    --text-color-white: rgb(254, 254, 254);
+    --text-color-white-light: rgb(237,230,236);
+
+
+    /* tipografia */
+    --font-bold: 700;
+    --font-semibold: 600;
+    --font-regular: 400;
+}
+
+/*========== RESET CSS ==========*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+i{
+    display: block;
+}
+
+ul, li{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    min-height: 80vh;
+    padding: 3rem 0rem 1rem;
+}
+
+/*========== REUSABLE CLASSES ==========*/
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.button{
+    background-color: var(--secondary-color);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    color: var(--text-color-white-light);
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+
+/*========== NAVBAR ==========*/
+.nav{
+    background-color: white;
+    text-align: center;
+    padding: .75rem 0;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+@media screen and (min-width: 640px) {
+    .nav__container{
+        display: flex;
+        justify-content: space-between;
+    }   
+}
+
+.nav__logo {
+    color: var(--primary-color);
+    font-weight: var(--font-bold);
+    font-size: 2rem;
+}
+
+.nav__menu {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__menu--item a:hover {
+    color: var(--primary-color);
+}
+
+
+/*========== SECCION INICIO ==========*/
+.inicio{
+    background-image: linear-gradient(05deg, var(--primary-color) -50% , rgba(0, 0, 0, 0.3)), url('../images/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.inicio__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+
+}
+
+@media screen and (min-width: 640px){
+    .inicio__container{
+        align-items: flex-start;
+    }    
+}
+
+.inicio__title{
+    color: var(--text-color-white);
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: .9;
+}
+
+@media screen and (min-width: 640px){
+    .inicio__title{
+        text-align: start;
+    }    
+}
+
+
+.inicio__description{
+    color: var(--text-color-white-light);
+    max-width: 650px;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+@media screen and (min-width: 640px){
+    .inicio__description{
+        text-align: start;
+    }    
+}
+
+
+.inicio_btn i{
+    transition-property: transform;
+    transition-duration: .3s;
+}
+
+.inicio_btn:hover i{
+    transform: translateX(7px);
+}
+
+/*========== BANNER INICIO ==========*/
+.inicio__banner{
+    background-color: white;
+    border-top: 1rem solid var(--primary-color);
+    border-radius: 1rem;
+    position: relative;
+    top: -4rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+@media screen and ( min-width: 768px ) {
+    .inicio__banner{
+        flex-direction: row;
+    }
+}
+
+.banner__data{
+    text-align: center;
+}
+
+.banner__title{
+    margin-bottom: 1.25rem;
+}
+
+.banner__description{
+    color: var(--text-color-light);
+    margin-bottom: 1.25rem;
+}
+
+.banner__link{
+    color: var(--primary-color);
+    background-color: var(--bg-body);
+    padding: .5rem;
+    border-radius:.5rem;
+}
+
+/*========== SECCION NOSOTROS ==========*/
+.nosotros__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px){
+    .nosotros__container{
+        flex-direction: row;
+        align-items:inherit;
+    }
+}
+
+.nosotros__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    max-width: 400px;
+}
+
+.nosotros__description{
+    color: var(--text-color-light);
+    margin-bottom: 1rem;
+    max-width: 650px;
+}
+
+.nosotros__btn{
+    background-color: var(--primary-color);
+    color: var(--text-color-white-light);
+    padding: .5rem 1rem;
+    border-radius:.5rem;
+}
+
+.nosotros__image img{
+    border-radius: 1rem;
+    height: auto;
+    max-width: 550px;
+}
+
+@media screen and (max-width: 768px) {
+    .nosotros__image img{
+        width: 100%;
+    }
+}
+
+/*========== SECCION SERVICIOS ==========*/
+.servicios__content{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.servicios__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.servicios__description{
+    color: var(--text-color-light);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.servicios__cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px){
+    .servicios__cards{
+        flex-direction: row;
+    }
+}
+
+
+.card__servicio{
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0px 3px 13px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.icon__card {
+    background-color: var(--primary-color);
+    padding: .5rem 1rem;
+    width: max-content;
+    color: var(--text-color-white);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.card__description {
+    color: var(--text-color-light);
+}
+
+/*========== SECCION HOGARES ==========*/
+.hogares__content{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hogares__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hogares__description{
+    color: var(--text-color-light);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+.hogares__cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px){
+    .hogares__cards{
+        flex-direction: row;
+    }
+}
+
+.card__hogar{
+    background-color: white;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.card__hogar--data{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__hogar--price{
+    font-size: 2rem;
+    font-weight: var(--font-semibold);
+}
+
+.card__hogar--description{
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: .5rem 0;
+}
+
+.card__hogar--link{
+    color: var(--primary-color);
+}
+
+/*========== SECCION CONTACTO ==========*/
+.contacto__content{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contacto__title{
+    font-size: 2rem;
+}
+
+.contacto__description{
+    color: var(--text-color-light);
+    max-width: 750px;
+    margin: auto;
+}
+
+.contacto__methods{
+    display: flex;
+    flex-direction: column;
+    background-color: white;    
+    justify-content: space-between;
+    box-shadow: 10px 20px 30px rgba( 0,0,0,0.3 );
+    border-radius: .75rem;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px){
+    .contacto__methods{
+        flex-direction: row;
+    }
+}
+
+.contacto__methods form{
+    width: auto;
+    padding: 2rem;
+}
+
+@media screen and (min-width: 768px){
+    .contacto__methods form{
+        width: 100%;
+    }
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label{
+    color: var(--text-color-light);
+}
+
+
+.form-group input{
+    padding: .75rem 1rem;
+}
+
+.contacto__info{
+    color: var(--text-color-white);
+    background-color: var(--primary-color);
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+}
